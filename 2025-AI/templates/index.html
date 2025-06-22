@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Outfit Recommender</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>AI Outfit Recommender</h1>
+        <p>Upload your clothes, we'll style your day.</p>
+    </header>
+
+    <main>
+        <div class="container">
+            <!-- UPLOAD SECTION -->
+            <section class="card">
+                <h2>1. Upload Your Wardrobe</h2>
+                <div id="drop-zone">
+                    <p>Drag & drop clothing images here, or click to select files.</p>
+                    <input type="file" id="file-input" multiple hidden>
+                </div>
+                <div id="upload-status"></div>
+                <div id="inventory" class="item-grid">
+                    <!-- Uploaded items will appear here -->
+                </div>
+            </section>
+
+            <!-- GENERATE SECTION -->
+            <section class="card">
+                <h2>2. Get Your Outfits</h2>
+                <div class="controls">
+                    <input type="text" id="city-input" placeholder="Enter your city (e.g., London)">
+                    <input type="text" id="pinterest-input" placeholder="Pinterest board link (optional feature)">
+                    <button id="generate-btn">Generate Outfits</button>
+                </div>
+                <div id="loading-spinner" class="spinner" style="display: none;"></div>
+            </section>
+
+            <!-- RESULTS SECTION -->
+            <section id="results-section" class="hidden">
+                <h2>Today's Suggestions</h2>
+                <div id="weather-info"></div>
+                <div id="outfit-results">
+                    <!-- Generated outfits will be displayed here -->
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

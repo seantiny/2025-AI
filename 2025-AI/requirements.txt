@@ -1,0 +1,12 @@
+Flask
+Flask-SQLAlchemy
+Pillow
+numpy
+opencv-python-headless
+requests
+torch
+transformers
+ftfy
+regex
+scikit-learn
+python-dotenv
